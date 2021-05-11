@@ -64,7 +64,7 @@ module.exports = {
       link: 'https://github.com/mayang542799675' // 可选的
     },
     blogger: { // 博主信息，显示在首页侧边栏
-      avatar: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
+      avatar: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-0102aaac-fe31-4677-8c8c-c910d78b20ad/696a450c-34da-4f2c-8d6c-0633237d8476.jpg',
       name: 'my',
       slogan: '两个小马的窝。'
     },
