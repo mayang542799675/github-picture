@@ -3,10 +3,10 @@ module.exports = [
   {
       text: '技术',
       link: '/technology/',
-      items: [
-          {text: 'SQL', link: '/pages/8309a5b876fc95e3/'},
-          {text: 'md语法', link: '/pages/799406/'},
-      ]
+      // items: [
+      //     {text: 'SQL', link: '/pages/8309a5b876fc95e3/'},
+      //     {text: 'md语法', link: '/pages/799406/'},
+      // ]
   },
   {
     text: '小窝',
