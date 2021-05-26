@@ -5,7 +5,8 @@ module.exports = {
   description: '狗蛋的窝', // 描述,以 <meta> 标签渲染到页面html中
   // base: '/', // '/<github仓库名>/'， 默认'/'
   head: [ // 注入到页面<head> 中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
-    ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
+    ['link', { rel: 'shortcut icon', href: '/favicon1.ico' }], //favicons，资源放在public文件夹
+      // ['link', { rel: 'shortcut icon', href: '/img/favicon.ico' }],
     ['meta', { name: 'keywords', content: '狗蛋的窝' }],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }],// 百度统计的站点拥有者验证
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
@@ -20,13 +21,13 @@ module.exports = {
 
   themeConfig: { // 主题配置
     nav,
-    sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
+    sidebarDepth: 1, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/my-logo.png', // 导航栏logo
     repo: 'mayang542799675', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 更新的时间，及前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
-    editLinks: true, // 启用编辑
+    editLinks: false, // 启用编辑
     editLinkText: '编辑',
 
     //*** 以下配置是Vdoing主题改动和新增的配置 ***//
@@ -90,7 +91,7 @@ module.exports = {
     },
     footer: { // 页脚信息
       createYear: 2021, // 博客创建年份
-      copyrightInfo: 'MY | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息，支持a标签
+      copyrightInfo: 'MY | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a> |<a href="http://beian.miit.gov.cn" target="_blank">宁ICP备2021001771号-1</a> ', // 博客版权信息，支持a标签
     }
   },
   plugins: [ // 插件
@@ -101,10 +102,10 @@ module.exports = {
 
     ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
       thirdparty: [ // 可选，默认 []
-        {
-          title: '在Vue API中搜索',
-          frontUrl: 'https://cn.vuejs.org/v2/api/#',
-        },
+        // {
+        //   title: '在Vue API中搜索',
+        //   frontUrl: 'https://cn.vuejs.org/v2/api/#',
+        // },
         // {
         //   title: '在Bing中搜索',
         //   frontUrl: 'https://cn.bing.com/search?q='
@@ -146,36 +147,37 @@ module.exports = {
     [
       'vuepress-plugin-baidu-tongji', // 百度统计
       {
-        hm: '503f098e7e5b3a5b5d8c5fc2938af002'
+        hm: 'b5b55c37555828be1143e7107d508577'
       }
     ],
     [
       'vuepress-plugin-comment', // 评论
-      // {
-      //   choosen: 'valine',
-      //   options: {
-      //     el: '#valine-vuepress-comment',
-      //     appId: 'qnS1jobNF7CROIQ0XYWBnVOH-gzGzoHsz',
-      //     appKey: 'LIKa0ePqFMkglQfOkN0JNK6c',
-      //     avatar: 'monsterid'
-      //   }
-      // },
       {
-        choosen: 'gitalk',
+        choosen: 'valine',
         options: {
-          clientID: '02462b8a4df6dc3a13bd',
-          clientSecret: '2325453942ab3d76812c790df4d845f502df7668',
-          repo: 'github-picture', // GitHub 仓库
-          owner: 'mayang542799675', // GitHub仓库所有者
-          admin: ['mayang542799675'], // 对仓库有写权限的人
-          // distractionFreeMode: true,
-          pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50
-          title: "「评论」<%- frontmatter.title %>", // GitHub issue 的标题
-          labels: ["Gitalk", "Comment"], // GitHub issue 的标签
-          body: "页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>" // GitHub issue 的内容
+          el: '#valine-vuepress-comment',
+          appId: 'VELWUDWL8uky3fyad4WsGmhv-gzGzoHsz',
+          appKey: 'BF7tW60feDnxaBIB1391fxt0',
+          avatar: 'mp',
+          path: '<%- frontmatter.commentid || frontmatter.permalink %>'
         }
-      }
+      },
+      // {
+      //   choosen: 'gitalk',
+      //   options: {
+      //     clientID: '02462b8a4df6dc3a13bd',
+      //     clientSecret: '2325453942ab3d76812c790df4d845f502df7668',
+      //     repo: 'github-picture', // GitHub 仓库
+      //     owner: 'mayang542799675', // GitHub仓库所有者
+      //     admin: ['mayang542799675'], // 对仓库有写权限的人
+      //     // distractionFreeMode: true,
+      //     pagerDirection: 'last', // 'first'正序 | 'last'倒序
+      //     id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50
+      //     title: "「评论」<%- frontmatter.title %>", // GitHub issue 的标题
+      //     labels: ["Gitalk", "Comment"], // GitHub issue 的标签
+      //     body: "页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>" // GitHub issue 的内容
+      //   }
+      // }
     ],
     [
       '@vuepress/last-updated', // "上次更新"时间格式
