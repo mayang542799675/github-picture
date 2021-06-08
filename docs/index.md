@@ -2,7 +2,7 @@
 home: true
 # heroImage: /img/web.png
 heroText: 狗蛋的窝
-tagline: 致敬每个访问本站的人。
+tagline: 愿你始终有初心模样，不曾变。
 # bodyBgImg: /img/bg.jpg
 # actionText: 立刻进入 →
 # actionLink: /web/
